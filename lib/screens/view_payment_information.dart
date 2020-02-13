@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:formatura_abc/common/constants.dart';
+import 'package:formatura_abc/components/payment_history_line.dart';
+import 'package:formatura_abc/components/totalizing_line.dart';
 
 class ViewPaymentInformation extends StatefulWidget {
 
@@ -41,30 +44,10 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text('Total:'),
-                        Text('RS 5.000,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text('A pagar:'),
-                        Text('RS 2.800,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text('Pago:'),
-                        Text('RS 2.000,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text('Pendente:'),
-                        Text('RS 200,00'),
-                      ],
-                    ),
+                    TotalizingLine('Total:', 'RS 5.000,00'),
+                    TotalizingLine('A pagar:', 'RS 2.800,00'),
+                    TotalizingLine('Pago:', 'RS 2.000,00'),
+                    TotalizingLine('Pendente:', 'RS 200,00'),
                   ],
                 )
               ),
@@ -75,76 +58,16 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.green,),
-                        Text('02/02/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.green,),
-                        Text('02/03/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.green,),
-                        Text('02/04/2019'),
-                        Text('RS 350,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.green,),
-                        Text('02/05/2019'),
-                        Text('RS 650,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.red,),
-                        Text('02/06/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.grey,),
-                        Text('02/07/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.grey,),
-                        Text('02/08/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.grey,),
-                        Text('02/09/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.grey,),
-                        Text('02/10/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.book, color: Colors.grey,),
-                        Text('02/11/2019'),
-                        Text('RS 500,00'),
-                      ],
-                    ),
+                    PaymentHistoryLine(AMOUNT_PAID, '02/02/2019', 'RS 500,00'),
+                    PaymentHistoryLine(AMOUNT_PAID, '02/03/2019', 'RS 500,00'),
+                    PaymentHistoryLine(AMOUNT_PAID, '02/04/2019', 'RS 350,00'),
+                    PaymentHistoryLine(AMOUNT_PAID, '02/05/2019', 'RS 650,00'),
+                    PaymentHistoryLine(EXPIRED_AMOUNT, '02/06/2019', 'RS 500,00'),
+                    PaymentHistoryLine(EXPIRING_AMOUNT, '02/07/2019', 'RS 500,00'),
+                    PaymentHistoryLine(EXPIRING_AMOUNT, '02/08/2019', 'RS 500,00'),
+                    PaymentHistoryLine(EXPIRING_AMOUNT, '02/09/2019', 'RS 500,00'),
+                    PaymentHistoryLine(EXPIRING_AMOUNT, '02/10/2019', 'RS 500,00'),
+                    PaymentHistoryLine(EXPIRING_AMOUNT, '02/11/2019', 'RS 500,00'),
                   ],
                 ),
               ),
@@ -156,7 +79,7 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
        // onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
