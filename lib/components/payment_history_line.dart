@@ -17,11 +17,27 @@ class PaymentHistoryLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Icon(Icons.book, color: getColor(status)),
+        getIcon(status),
         Text(date),
         Text(value),
       ],
     );
+  }
+
+  Icon getIcon(int status) {
+    Icon icon;
+    switch (status) {
+      case AMOUNT_PAID:
+        icon = Icon(Icons.check_box, color: Colors.green);
+        break;
+      case EXPIRED_AMOUNT:
+        icon = Icon(Icons.check_box, color: Colors.red);
+        break;
+      default:
+        icon = Icon(Icons.check_box_outline_blank, color: Colors.grey);
+        break;
+    }
+    return icon;
   }
 
   Color getColor(int status) {
