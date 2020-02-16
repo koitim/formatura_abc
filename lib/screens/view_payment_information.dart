@@ -14,6 +14,8 @@ class ViewPaymentInformation extends StatefulWidget {
 
 class _ViewPaymentInformation extends State<ViewPaymentInformation> {
 
+  int _selectedIndex = 0;
+
   final descTextStyle = TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.w800,
@@ -22,6 +24,12 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
     fontSize: 18,
     height: 2,
   );
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +51,7 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: DefaultTextStyle(style: descTextStyle, child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
             children: <Widget>[
               Container(
                   padding: const EdgeInsets.all(4.0),
@@ -87,8 +94,18 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
           ),
         ),),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.attach_money), title: Text('Financeiro')),
+            BottomNavigationBarItem(icon: Icon(Icons.payment), title: Text('Gastos')),
+            BottomNavigationBarItem(icon: Icon(Icons.signal_wifi_4_bar_lock), title: Text('Votações')),
+          ],
+          currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
       floatingActionButton: FloatingActionButton(
-       // onPressed: _incrementCounter,
+        onPressed: null,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

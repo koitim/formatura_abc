@@ -15,18 +15,29 @@ class PaymentHistoryLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            getIcon(status),
-            Text(date),
-          ],
-        ),
-        Text(value),
-      ],
+    return Container(
+      decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: 1,
+              color: Colors.black38,
+            )
+          )
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              getIcon(status),
+              Text(date),
+            ],
+          ),
+          Text(value),
+        ],
+      ),
     );
   }
 
