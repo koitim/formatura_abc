@@ -16,9 +16,15 @@ class PaymentHistoryLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        getIcon(status),
-        Text(date),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            getIcon(status),
+            Text(date),
+          ],
+        ),
         Text(value),
       ],
     );
@@ -38,9 +44,5 @@ class PaymentHistoryLine extends StatelessWidget {
         break;
     }
     return icon;
-  }
-
-  Color getColor(int status) {
-    return (status == EXPIRING_AMOUNT?Colors.grey:status == EXPIRED_AMOUNT?Colors.red:Colors.green);
   }
 }

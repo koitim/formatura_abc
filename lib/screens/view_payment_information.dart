@@ -14,6 +14,15 @@ class ViewPaymentInformation extends StatefulWidget {
 
 class _ViewPaymentInformation extends State<ViewPaymentInformation> {
 
+  final descTextStyle = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'Roboto',
+    letterSpacing: 0.5,
+    fontSize: 18,
+    height: 2,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,25 +42,28 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Center(
+        child: DefaultTextStyle(style: descTextStyle, child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.black38),
-                  borderRadius: const BorderRadius.all(const Radius.circular(8))
-                ),
-                child: Column(
-                  children: <Widget>[
-                    TotalizingLine('Total:', 'RS 5.000,00'),
-                    TotalizingLine('A pagar:', 'RS 2.800,00'),
-                    TotalizingLine('Pago:', 'RS 2.000,00'),
-                    TotalizingLine('Pendente:', 'RS 200,00'),
-                  ],
-                )
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2, color: Colors.black38),
+                      borderRadius: const BorderRadius.all(const Radius.circular(8))
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      TotalizingLine('Total:', 'RS 5.000,00', Colors.black),
+                      TotalizingLine('A pagar:', 'RS 2.800,00', Colors.red),
+                      TotalizingLine('Pago:', 'RS 2.000,00', Colors.green),
+                      TotalizingLine('A confirmar:', 'RS 200,00', Colors.orange),
+                    ],
+                  )
               ),
               Container(
+                margin: EdgeInsets.fromLTRB(0, 8.0, 0, 0),
+                padding: const EdgeInsets.all(4.0),
                 decoration: BoxDecoration(
                     border: Border.all(width: 2, color: Colors.black38),
                     borderRadius: const BorderRadius.all(const Radius.circular(8))
@@ -73,7 +85,7 @@ class _ViewPaymentInformation extends State<ViewPaymentInformation> {
               ),
             ],
           ),
-        ),
+        ),),
       ),
       floatingActionButton: FloatingActionButton(
        // onPressed: _incrementCounter,
