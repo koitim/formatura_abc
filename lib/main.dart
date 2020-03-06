@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:formatura_abc/screens/view_payment_information.dart';
+import 'package:formatura_abc/app.dart';
+import 'package:formatura_abc/core/redux/store.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+void main() => runApp(
+      ABCGraduationApp(
+        createStore(),
       ),
-      home: ViewPaymentInformation(title: 'Formatura ABC'),
     );
-  }
-}

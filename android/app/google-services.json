@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "554393562027",
+    "firebase_url": "https://formaturaabc-60075.firebaseio.com",
+    "project_id": "formaturaabc-60075",
+    "storage_bucket": "formaturaabc-60075.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554393562027:android:7862a3533f7d626cf940ee",
+        "android_client_info": {
+          "package_name": "br.com.koitim.formaturaabc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554393562027-ic37epgkluuk80cmfttesi3lanpbm4f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD168AwYUVgt8ZPnzioyL0zB3leVadZTQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554393562027-ic37epgkluuk80cmfttesi3lanpbm4f7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "554393562027-r0e9g0fjsgh8t66pcj7gg1ra2bopm3k8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.koitim.formaturaabc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

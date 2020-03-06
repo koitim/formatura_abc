@@ -7,13 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:formatura_abc/main.dart';
+import 'package:formatura_abc/app.dart';
+import 'package:formatura_abc/core/redux/store.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(ABCGraduationApp(createStore()));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

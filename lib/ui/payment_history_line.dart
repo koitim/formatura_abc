@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:formatura_abc/common/constants.dart';
+import 'package:formatura_abc/core/models/quota.dart';
 
 class PaymentHistoryLine extends StatelessWidget {
 
-  final int status;
-  final String date;
-  final String value;
+  final Quota quota;
 
   PaymentHistoryLine(
-      this.status,
-      this.date,
-      this.value
+      this.quota,
       );
 
   @override
@@ -31,28 +27,24 @@ class PaymentHistoryLine extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              getIcon(status),
-              Text(date),
+              getIcon(quota.status),
+              Text(quota.date.toString()),
             ],
           ),
-          Text(value),
+          Text(quota.value.toString()),
         ],
       ),
     );
   }
 
-  Icon getIcon(int status) {
+  Icon getIcon(QuotaListStatus status) {
     Icon icon;
-    switch (status) {
-      case AMOUNT_PAID:
-        icon = Icon(Icons.check_box, color: Colors.green);
-        break;
-      case EXPIRED_AMOUNT:
-        icon = Icon(Icons.check_box, color: Colors.red);
-        break;
-      default:
-        icon = Icon(Icons.check_box_outline_blank, color: Colors.grey);
-        break;
+    if (status == QuotaListStatus.quotaPaid) {
+      icon = Icon(Icons.check_circle, color: Colors.green);
+    } else if (status == QuotaListStatus.quotaOverdue) {
+      icon = Icon(Icons.remove_circle, color: Colors.red);
+    } else {
+        icon = Icon(Icons.remove_circle_outline, color: Colors.grey);
     }
     return icon;
   }
