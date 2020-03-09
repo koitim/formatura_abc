@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:554393562027:android:7862a3533f7d626cf940ee",
+        "mobilesdk_app_id": "1:554393562027:android:e76e1f389933e762f940ee",
         "android_client_info": {
-          "package_name": "br.com.koitim.formaturaabc"
+          "package_name": "br.com.koitim.formatura_abc"
         }
       },
       "oauth_client": [
